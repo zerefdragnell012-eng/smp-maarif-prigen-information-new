@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
-    <link rel="icon" href="screen.png" type="image/png"/>
-
     <script id="tailwind-config">
           tailwind.config = {
             theme: {
@@ -17,7 +15,7 @@
                 colors: {
                   "primary": "#002819",
                   "secondary": "#236a53",
-                  "tertiary-fixed-dim": "#e9c176",
+                  "tertiary": "#e9c176",
                   "surface": "#f8f9ff",
                 },
                 fontFamily: {
@@ -31,56 +29,63 @@
     </script>
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .mobile-menu.open { max-height: 400px; }
+        .hero-gradient { background: linear-gradient(135deg, #002819 0%, #004d32 100%); }
     </style>
 </head>
 <body class="bg-surface font-body text-slate-900">
 
-<nav class="bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm w-full">
+<nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm w-full">
     <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <div class="text-xl font-bold text-emerald-900 font-headline">SMP Maarif Prigen</div>
         <div class="hidden md:flex gap-8 font-semibold text-sm">
-            <a href="#beranda" class="text-[#E9C176]">Beranda</a>
-            <a href="#profil">Profil</a>
-            <a href="#pendaftaran">Pendaftaran</a>
+            <a href="#beranda" class="text-emerald-700">Beranda</a>
+            <a href="#profil" class="hover:text-emerald-600">Profil</a>
+            <a href="#pendaftaran" class="hover:text-emerald-600">Pendaftaran</a>
         </div>
-        <button id="hamburger-btn" class="md:hidden"><span class="material-symbols-outlined">menu</span></button>
     </div>
 </nav>
 
-<section id="beranda" class="relative h-[80vh] flex items-center overflow-hidden bg-primary">
-    <div class="absolute inset-0">
-        <img alt="Gedung Sekolah" class="w-full h-full object-cover opacity-40" src="screen.png"/>
-    </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-white">
-        <span class="font-script text-tertiary-fixed-dim text-4xl mb-4 block">Yo Sekolah, Yo Ngaji!</span>
+<section id="beranda" class="hero-gradient relative h-[70vh] flex items-center overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-white text-center md:text-left">
+        <span class="font-script text-tertiary text-4xl mb-4 block">Yo Sekolah, Yo Ngaji!</span>
         <h1 class="font-headline font-extrabold text-5xl md:text-7xl mb-6">SMP Maarif Prigen</h1>
-        <p class="max-w-xl text-lg mb-8">Pendidikan berkualitas dengan nilai-nilai spiritualitas Islam Ahlussunnah Wal Jama'ah.</p>
-        <a class="bg-tertiary-fixed-dim text-primary font-bold px-8 py-4 rounded-xl inline-block" href="https://s.id/SPMBARMAPRI2026-2027">Daftar Sekarang</a>
+        <p class="max-w-xl text-lg mb-8 opacity-90 mx-auto md:mx-0">Mewujudkan generasi cerdas yang berpegang teguh pada nilai Islam Ahlussunnah Wal Jama'ah.</p>
+        <a class="bg-tertiary text-primary font-bold px-8 py-4 rounded-full inline-block shadow-lg hover:bg-yellow-500 transition-all" href="https://s.id/SPMBARMAPRI2026-2027">Daftar Sekarang</a>
     </div>
 </section>
 
 <section id="profil" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <img alt="Profil Sekolah" class="rounded-2xl shadow-xl w-full" src="screen.png"/>
+        <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full border-2 border-tertiary rounded-2xl"></div>
+            <img alt="Kegiatan Sekolah" class="relative z-10 rounded-2xl shadow-2xl w-full object-cover aspect-video" src="screen.png"/>
         </div>
-        <div>
-            <h2 class="font-headline text-4xl font-bold text-primary mb-6">Akreditasi A</h2>
-            <p class="text-lg text-slate-600">Berlokasi di Pecalukan Prigen, kami berkomitmen mencetak generasi yang cerdas dan berakhlakul karimah.</p>
+        <div class="space-y-6">
+            <h2 class="font-headline text-4xl font-bold text-primary">Sekolah Unggulan Berakreditasi A</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">Terletak di Kec. Prigen, kami menyediakan lingkungan belajar yang asri dan religius untuk mendukung tumbuh kembang siswa secara maksimal.</p>
+            <div class="flex gap-4">
+                <div class="bg-emerald-100 p-4 rounded-xl text-center flex-1">
+                    <span class="block font-bold text-2xl text-primary">A</span>
+                    <span class="text-xs uppercase font-bold text-emerald-700">Akreditasi</span>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-xl text-center flex-1">
+                    <span class="material-symbols-outlined text-primary">verified_user</span>
+                    <span class="block text-xs uppercase font-bold text-emerald-700">Terpercaya</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <footer class="bg-emerald-950 text-white py-12 text-center">
-    <p>© 2026 SMP Maarif Prigen. Seluruh Hak Cipta Dilindungi.</p>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="font-headline font-bold text-2xl mb-4 text-tertiary">SMP Maarif Prigen</div>
+        <p class="opacity-60 text-sm mb-6">Jl. Krajan Barat I/45, Pecalukan, Prigen, Pasuruan</p>
+        <div class="border-t border-white/10 pt-8 text-xs opacity-40">
+            © 2026 SMP Maarif Prigen. Seluruh Hak Cipta Dilindungi.
+        </div>
+    </div>
 </footer>
 
-<script>
-    const btn = document.getElementById('hamburger-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.onclick = () => menu.classList.toggle('open');
-</script>
 </body>
 </html>
